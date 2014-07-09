@@ -1,0 +1,2 @@
+grunt watch --force
+pause
