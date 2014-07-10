@@ -12,3 +12,4 @@ node_modules
 phpmyadmin
 .vagrant
 /app/storage/*
+launcher_grunt.bat
