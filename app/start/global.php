@@ -67,6 +67,18 @@ App::down(function()
 	return Response::make("Be right back!", 503);
 });
 
+
+
+
+App::before(function()
+{
+	foreach (Setting::allCache() as $setting) {
+		Config::set('setting_' . $setting->label, $setting->value);
+	}
+});
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Require The Filters File
