@@ -8,5 +8,12 @@ class Setting extends Eloquent {
 	public $timestamps	= false;
 	
 	
+	public function allCache() 
+	{
+	  return Cache::rememberforever('settings', function()
+	  {
+	    return Setting::all();
+	  });
+	}	
 
 }
