@@ -2,13 +2,13 @@
 
 class Setting extends Eloquent {
 
-	protected $table 	= 'setting';
+	protected $table 	= 'settings';
 	protected $primaryKey	= 'id';
 
 	public $timestamps	= false;
 	
 	
-	public function allCache() 
+	public static function allCache() 
 	{
 	  return Cache::rememberforever('settings', function()
 	  {
