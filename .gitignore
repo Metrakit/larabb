@@ -11,3 +11,4 @@ Thumbs.db
 node_modules
 phpmyadmin
 .vagrant
+/app/storage/*
