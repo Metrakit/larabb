@@ -1,17 +1,17 @@
-## LaraBB
+# LaraBB
 
 
-# Back end
+## Back end
 
-PHP : Framework Laravel (v4.2)
-
-
-# Front end
-
-Javascript : Framework AngularJS
-CSS : Twitter Bootstrap
+*PHP : Framework Laravel (v4.2)
 
 
-# Tools
+## Front end
 
-GruntJS
+*Javascript : Framework AngularJS
+*CSS : Twitter Bootstrap
+
+
+## Tools
+
+*GruntJS
