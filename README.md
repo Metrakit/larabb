@@ -17,8 +17,3 @@
 * GruntJS
 * Puphpet
 * Vagrant
-
-
-## Configuration
-
-Domain : larabb.com
