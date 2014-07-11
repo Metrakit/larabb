@@ -39,9 +39,9 @@ class Module extends Eloquent {
 	 */
 	public static function enable($module) 
 	{
-		Cache::forget('settings');
-		Config::set('setting_module_' . $module, true);
-		return Setting::where('label', 'module_' . $module)->update(array('value' => true));
+		Setting::clear();
+		Setting::where('label', 'module_' . $module)->update(array('value' => true));
+		return Setting::make();
 	}
 
 
@@ -52,9 +52,9 @@ class Module extends Eloquent {
 	 */
 	public static function disable($module) 
 	{
-		Cache::forget('settings');
-		Config::set('setting_module_' . $module, false);
-		return Setting::where('label', 'module_' . $module)->update(array('value' => false));
+		Setting::clear();
+		Setting::where('label', 'module_' . $module)->update(array('value' => false));
+		return Setting::make();
 	}
 
 

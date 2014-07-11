@@ -72,9 +72,7 @@ App::down(function()
 
 App::before(function()
 {
-	foreach (Setting::allCache() as $setting) {
-		Config::set('setting_' . $setting->label, $setting->value);
-	}
+	Setting::make();
 });
 
 

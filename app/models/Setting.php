@@ -7,6 +7,17 @@ class Setting extends Eloquent {
 
 	public $timestamps	= false;
 	
+	public static function make()
+	{
+		foreach (Setting::allCache() as $setting) {
+			Config::set('setting_' . $setting->label, $setting->value);
+		}
+	}
+
+	public static function clear()
+	{
+		return Cache::forget('settings');
+	}
 	
 	public static function allCache() 
 	{
