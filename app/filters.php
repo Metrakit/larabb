@@ -35,14 +35,10 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-	if (Auth::guest())
-	{
-		if (Request::ajax())
-		{
+	if (Auth::guest()) {
+		if (Request::ajax()) {
 			return Response::make('Unauthorized', 401);
-		}
-		else
-		{
+		} else {
 			return Redirect::guest('login');
 		}
 	}
@@ -83,8 +79,22 @@ Route::filter('guest', function()
 
 Route::filter('csrf', function()
 {
-	if (Session::token() != Input::get('_token'))
-	{
+	if (Session::token() != Input::get('_token')) {
 		throw new Illuminate\Session\TokenMismatchException;
+	}
+});
+
+/*
+|--------------------------------------------------------------------------
+| Modules Filter
+|--------------------------------------------------------------------------
+|
+*/
+
+
+Route::filter('module', function($route, $request, $module)
+{
+	if (!Config::get('setting_module_' . $module)) {
+		return Redirect::route('error/module');
 	}
 });

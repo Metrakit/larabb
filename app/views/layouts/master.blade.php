@@ -10,9 +10,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/main.min.css">
-
-        <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        {{ HTML::style('css/main.min.css') }}
+        {{ HTML::script('js/modernizr-2.6.2-respond-1.1.0.min.js') }}
     </head>
 
     <body>
@@ -21,8 +20,9 @@
           <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
     
-      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="navbar navbar-inverse" role="navigation">
         <div class="container">
+
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
               <span class="sr-only">Toggle navigation</span>
@@ -30,19 +30,45 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">LaraBB</a>
+            <a class="navbar-brand" href="{{URL::route('home')}}">LaraBB</a>
           </div>
+
           <div class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right" role="form">
-              <div class="form-group">
-                <input type="text" placeholder="Email" class="form-control">
-              </div>
-              <div class="form-group">
-                <input type="password" placeholder="Password" class="form-control">
-              </div>
-              <button type="submit" class="btn btn-success">Sign in</button>
-            </form>
+
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="{{URL::route('home')}}">{{Lang::get('text.home')}}</a>
+              </li>
+              {{ Module::link('forum', URL::route('forum'), Lang::get('text.forum')) }}
+              {{ Module::link('gallery', URL::route('gallery'), Lang::get('text.gallery')) }}
+              {{ Module::link('shop', URL::route('shop'), Lang::get('text.shop')) }}
+              <li>
+                <a href="{{URL::route('admin')}}">{{Lang::get('text.administration')}}</a>
+              </li>
+            </ul>
+
+            @if(Module::isEnabled('user'))
+              <ul class="nav navbar-nav navbar-right">
+                @if(Auth::check())
+                  <li>
+                    <a href="{{URL::route('account')}}">{{Lang::get('text.my_account')}}</a>
+                  </li>
+                  <li>
+                    <a href="{{URL::route('logout')}}">{{Lang::get('text.logout')}}</a>
+                  </li>
+                @else
+                  <li>
+                    <a href="{{URL::route('login')}}">{{Lang::get('text.login')}}</a>
+                  </li>
+                  <li>
+                    <a href="{{URL::route('create')}}">{{Lang::get('text.register')}}</a>
+                  </li>               
+                @endif
+              </ul>
+            @endif
+
           </div>
+
         </div>
       </div>
 
@@ -51,14 +77,14 @@
 
 
       <footer>
-        <div class="container">
-          <p>&copy; LaraBB 2014</p>
+        <div class="container text-right">
+          <p>&copy; <a href="{{URL::route('home')}}">LaraBB</a> 2014</p>
         </div>
       </footer>
 
-      <script src="js/angular.min.js"></script>
-      <script src="js/main.min.js"></script>
+      {{ HTML::script('js/angular.min.js') }}
+      {{ HTML::script('js/main.min.js') }}
 
     </body>
-    
+
 </html>

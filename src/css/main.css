@@ -1,6 +1,21 @@
 /*==================================================
 =            		   Variables              	   =
 ==================================================*/
+/* line 1, ../sass/common/_general.scss */
+* {
+  outline: 0 !important;
+}
+
+/* line 5, ../sass/common/_general.scss */
+a {
+  text-decoration: none !important;
+}
+
+/* line 1, ../sass/pages/_login.scss */
+.login {
+  margin-top: 100px;
+}
+
 /*==================================================
 =            		Media Queries            	   =
 ==================================================*/

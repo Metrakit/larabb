@@ -17,7 +17,7 @@ return array(
 
 	/*
 	|--------------------------------------------------------------------------
-	| Application URL
+	| Application URL and Domain
 	|--------------------------------------------------------------------------
 	|
 	| This URL is used by the console to properly generate URLs when using
@@ -25,6 +25,8 @@ return array(
 	| your application so that it is used when running Artisan tasks.
 	|
 	*/
+
+	'domain' => 'larabb.com',
 
 	'url' => 'http://larabb.com',
 
