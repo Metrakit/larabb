@@ -11,7 +11,7 @@
 // Reset and dependencies
 @import "bootstrap/normalize";
 @import "bootstrap/print";
-@import "bootstrap/glyphicons";
+//@import "bootstrap/glyphicons";
 
 // Core CSS
 @import "bootstrap/scaffolding";
@@ -54,3 +54,22 @@
 // Utility classes
 @import "bootstrap/utilities";
 @import "bootstrap/responsive-utilities";
+
+
+/*!
+ *  Font Awesome 4.1.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+
+@import "fontawesome/variables";
+@import "fontawesome/mixins";
+@import "fontawesome/path";
+@import "fontawesome/core";
+@import "fontawesome/larger";
+@import "fontawesome/fixed-width";
+@import "fontawesome/list";
+@import "fontawesome/bordered-pulled";
+@import "fontawesome/spinning";
+@import "fontawesome/rotated-flipped";
+@import "fontawesome/stacked";
+@import "fontawesome/icons";

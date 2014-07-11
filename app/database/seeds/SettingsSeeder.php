@@ -7,6 +7,8 @@ class SettingsSeeder extends Seeder {
         DB::table('settings')->delete();
 
         DB::table('settings')->insert(array(
+
+        	// Modules settings
 			array(
 				'label' => 'module_forum',
 				'value' => true		
@@ -22,7 +24,11 @@ class SettingsSeeder extends Seeder {
 			array(
 				'label' => 'module_gallery',
 				'value' => true		
-			)
+			),
+			array(
+				'label' => 'module_search',
+				'value' => true		
+			)			
 
         ));
 
