@@ -28,4 +28,9 @@ return array(
 	'password'									=> 'Mot de passe',
 	'remember_me'								=> 'Se souvenir',
 
+
+	// Form
+
+	'valid'										=> 'Valider',	
+
 );

@@ -58,4 +58,18 @@ class Module extends Eloquent {
 	}
 
 
+	public static function getAll()
+	{
+		$data = array();
+		foreach (Setting::allCache() as $setting) {
+			
+			if (preg_match("/module_/i", $setting->label)) {
+				$data[substr($setting['label'], 7)] = $setting['value'];
+			}
+		}
+
+		return $data;
+	}
+
+
 }

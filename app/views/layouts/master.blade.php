@@ -47,7 +47,7 @@
               </li>
             </ul>
 
-            @module('search')
+            @if(Module::isEnabled('search'))
             <div class="col-sm-3 col-md-3">
                 <form class="navbar-form" role="search">
                 <div class="input-group">
@@ -58,9 +58,9 @@
                 </div>
                 </form>
             </div>            
-            @endmodule
+            @endif
 
-            @module('user')
+            @if(Module::isEnabled('user'))
               <ul class="nav navbar-nav navbar-right">
                 @if(Auth::check())
                   <li>
@@ -78,7 +78,7 @@
                   </li>               
                 @endif
               </ul>
-            @endmodule
+            @endif
 
           </div>
 

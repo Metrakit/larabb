@@ -139,5 +139,8 @@ Route::group(array('domain' => 'admin.' . Config::get('app.domain')), function()
 
     Route::get('/', array('as' => 'admin', 'uses'=>'AdminController@show'));
 
+    Route::get('/modules', array('as' => 'admin/modules', 'uses'=>'AdminController@modules'));
+    Route::post('/modules', array('as' => 'admin/modules/update', 'uses'=>'AdminController@updateModules'));
+
 });
 
