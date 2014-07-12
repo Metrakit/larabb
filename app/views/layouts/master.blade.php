@@ -49,7 +49,7 @@
 
             {{-- Search module --}}
             @if(Module::isEnabled('search'))
-            <div class="col-sm-3 col-md-3">
+            <div class="col-sm-4 col-md-4">
               {{ Form::open(array('route' => 'search', 'class' => 'navbar-form',  'role' => 'search')) }}
                 <div class="input-group">
                   <input type="text" class="form-control" placeholder="{{ Lang::get('text.search') }}" name="keywords">

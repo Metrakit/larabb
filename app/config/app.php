@@ -26,9 +26,9 @@ return array(
 	|
 	*/
 
-	'domain' => 'larabb.com',
+	'subdomains' => true,
 
-	'subdomains' => false,
+	'domain' => 'larabb.com',
 
 	'url' => 'http://larabb.com',
 
