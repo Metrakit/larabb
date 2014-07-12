@@ -23,8 +23,24 @@ return array(
 
 
 	// Authentification
+
 	'enter_your_id'								=> 'Enter your ids',
 	'password'									=> 'Password',
 	'remember_me'								=> 'Remember me',
+
+
+	// Form
+
+	'valid'										=> 'Valid',
+
+
+	// Search
+	
+	'search'									=> 'Search',
+
+
+	// Gallery
+	
+	'picture'									=> 'Picture',	
 
 );

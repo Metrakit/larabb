@@ -33,4 +33,15 @@ return array(
 
 	'valid'										=> 'Valider',	
 
+
+	// Search
+	
+	'search'									=> 'Recherche',
+
+
+	// Gallery
+	
+	'picture'									=> 'Image',
+
+
 );

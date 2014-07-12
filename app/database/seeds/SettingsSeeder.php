@@ -8,6 +8,7 @@ class SettingsSeeder extends Seeder {
 
         DB::table('settings')->insert(array(
 
+
         	// Modules settings
 			array(
 				'label' => 'module_forum',
@@ -28,7 +29,16 @@ class SettingsSeeder extends Seeder {
 			array(
 				'label' => 'module_search',
 				'value' => true		
-			)			
+			),
+
+
+			// Inscriptions settings
+			array(
+				'label' => 'inscriptions',
+				'value' => true		
+			)
+
+
 
         ));
 

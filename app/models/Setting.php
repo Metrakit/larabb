@@ -15,8 +15,9 @@ class Setting extends Eloquent {
 	public static function make()
 	{
 		foreach (Setting::allCache() as $setting) {
-			Config::set('setting_' . $setting->label, $setting->value);
+			Config::set('setting.' . $setting->label, $setting->value);
 		}
+		
 		return true;
 	}
 
@@ -42,5 +43,6 @@ class Setting extends Eloquent {
 	    return Setting::all();
 	  });
 	}	
+
 
 }

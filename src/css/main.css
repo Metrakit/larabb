@@ -1,38 +1,4 @@
 /*==================================================
-=            		   Variables              	   =
-==================================================*/
-/* line 1, ../sass/common/_general.scss */
-* {
-  outline: 0 !important;
-}
-
-/* line 5, ../sass/common/_general.scss */
-a {
-  text-decoration: none !important;
-}
-
-/* line 1, ../sass/pages/_login.scss */
-.login {
-  margin-top: 100px;
-}
-
-/*==================================================
-=            		Media Queries            	   =
-==================================================*/
-/*==========  Mobile First Method  ==========*/
-/* Custom, iPhone Retina */
-/* Extra Small Devices, Phones */
-/* Small Devices, Tablets */
-/* Medium Devices, Desktops */
-/* Large Devices, Wide Screens */
-/*==========  Non-Mobile First Method  ==========*/
-/* Large Devices, Wide Screens */
-/* Medium Devices, Desktops */
-/* Small Devices, Tablets */
-/* Extra Small Devices, Phones */
-/* Custom, iPhone Retina */
-
-/*==================================================
 =       	          Vendor SCSS                  =
 ==================================================*/
 /* BOOTSTRAP 3.2 */
@@ -9562,3 +9528,48 @@ button.close {
 .fa-bomb:before {
   content: "\f1e2";
 }
+
+/*==================================================
+=            		   Variables              	   =
+==================================================*/
+/* line 1, ../sass/common/_general.scss */
+* {
+  outline: 0 !important;
+}
+
+/* line 5, ../sass/common/_general.scss */
+a {
+  text-decoration: none !important;
+}
+
+/* line 9, ../sass/common/_general.scss */
+.btn-search {
+  border-radius: 0;
+  border-left: 0;
+}
+
+/* line 14, ../sass/common/_general.scss */
+.dropdown-menu {
+  min-width: 80px;
+}
+
+/* line 1, ../sass/pages/_login.scss */
+.login {
+  margin-top: 100px;
+}
+
+/*==================================================
+=            		Media Queries            	   =
+==================================================*/
+/*==========  Mobile First Method  ==========*/
+/* Custom, iPhone Retina */
+/* Extra Small Devices, Phones */
+/* Small Devices, Tablets */
+/* Medium Devices, Desktops */
+/* Large Devices, Wide Screens */
+/*==========  Non-Mobile First Method  ==========*/
+/* Large Devices, Wide Screens */
+/* Medium Devices, Desktops */
+/* Small Devices, Tablets */
+/* Extra Small Devices, Phones */
+/* Custom, iPhone Retina */

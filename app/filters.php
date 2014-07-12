@@ -84,6 +84,7 @@ Route::filter('csrf', function()
 	}
 });
 
+
 /*
 |--------------------------------------------------------------------------
 | Modules Filter
@@ -91,10 +92,11 @@ Route::filter('csrf', function()
 |
 */
 
-
-Route::filter('module', function($route, $request, $module)
+Route::filter('inscriptions', function()
 {
-	if (!Config::get('setting_module_' . $module)) {
-		return Redirect::route('error/module');
+	if (!Config::get('setting.inscriptions')) {
+		return Redirect::route('error/inscriptions');
 	}
 });
+
+

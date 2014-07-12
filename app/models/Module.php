@@ -28,7 +28,7 @@ class Module extends Eloquent {
 	 */
 	public static function isEnabled($module) 
 	{
-		return Config::get('setting_module_' . $module) ? true : false;	  
+		return Config::get('setting.module_' . $module) ? true : false;	  
 	}
 
 

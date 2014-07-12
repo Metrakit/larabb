@@ -28,6 +28,8 @@ return array(
 
 	'domain' => 'larabb.com',
 
+	'subdomains' => false,
+
 	'url' => 'http://larabb.com',
 
 	/*

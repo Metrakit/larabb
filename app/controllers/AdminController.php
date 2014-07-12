@@ -29,7 +29,6 @@ class AdminController extends BaseController {
 	public function updateModules()
 	{
 		foreach (Input::except('_token') as $module => $value) {
-			var_dump($value);
 			if ($value == 1) {
 				Module::enable($module);
 			} else {

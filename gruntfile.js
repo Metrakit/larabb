@@ -25,14 +25,14 @@ module.exports = function(grunt) {
     concat: {
 
       js: {
-				src:'src/js/**/*.js',				
+				src:'src/**/*.js',				
 				dest:'dist/js/main.min.js'
       },
 
       css: {
         src: [
+              'src/css/vendor.css',        
               'src/css/master.css',
-              'src/css/vendor.css',
              ],
         dest: 'src/css/main.css'
       }   
@@ -64,12 +64,12 @@ module.exports = function(grunt) {
     watch: {
 
       js: {
-          files: 'src/js/**/*.js',
+          files: 'src/**/*.js',
           tasks: ['concat:js', 'uglify'], 
           options: {
               livereload: true
           }
-      },
+      },  
 
       sass: {
         files: 'src/sass/**/*.scss',

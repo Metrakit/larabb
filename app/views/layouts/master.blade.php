@@ -47,36 +47,75 @@
               </li>
             </ul>
 
+            {{-- Search module --}}
             @if(Module::isEnabled('search'))
             <div class="col-sm-3 col-md-3">
-                <form class="navbar-form" role="search">
+              {{ Form::open(array('route' => 'search', 'class' => 'navbar-form',  'role' => 'search')) }}
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" name="q">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
-                    </div>
+                  <input type="text" class="form-control" placeholder="{{ Lang::get('text.search') }}" name="keywords">
+                  <div class="input-group-btn">
+                    <span dropdown>
+                      <button class="btn btn-default btn-search dropdown-toggle" type="button">
+                        <i class="fa" data-ng-class="searchType ? 'fa-' + searchType : 'fa-cog'"></i> <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        @if(Module::isEnabled('user')) 
+                          <li>
+                            <a href="#" data-ng-click="searchType = 'user'">
+                              <i class="fa fa-user"></i> {{ Lang::get('text.user') }}
+                            </a>
+                          </li> 
+                        @endif
+                        @if(Module::isEnabled('forum')) 
+                          <li>
+                            <a href="#" data-ng-click="searchType = 'list'">
+                              <i class="fa fa-list"></i> {{ Lang::get('text.forum') }}
+                            </a>
+                          </li> 
+                        @endif
+                        @if(Module::isEnabled('gallery')) 
+                          <li>
+                            <a href="#" data-ng-click="searchType = 'photo'">
+                              <i class="fa fa-photo"></i> {{ Lang::get('text.picture') }}
+                            </a>
+                          </li> 
+                        @endif
+                      </ul>
+                    </span>
+                    <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                  </div>
                 </div>
-                </form>
+              {{ Form::close() }}
             </div>            
             @endif
+            {{-- End of Search module --}}
 
             @if(Module::isEnabled('user'))
               <ul class="nav navbar-nav navbar-right">
+
                 @if(Auth::check())
+
                   <li>
                     <a href="{{URL::route('account')}}">{{Lang::get('text.my_account')}}</a>
                   </li>
                   <li>
                     <a href="{{URL::route('logout')}}">{{Lang::get('text.logout')}}</a>
                   </li>
+
                 @else
+
                   <li>
                     <a href="{{URL::route('login')}}">{{Lang::get('text.login')}}</a>
                   </li>
+
+                  @if(Config::get('setting.inscriptions'))
                   <li>
                     <a href="{{URL::route('create')}}">{{Lang::get('text.register')}}</a>
-                  </li>               
+                  </li>
+                  @endif
+
                 @endif
+
               </ul>
             @endif
 
@@ -94,7 +133,7 @@
           <p>&copy; <a href="{{URL::route('home')}}">LaraBB</a> 2014</p>
         </div>
       </footer>
-
+    
       {{ HTML::script('js/angular.min.js') }}
       {{ HTML::script('js/main.min.js') }}
 
