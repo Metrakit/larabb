@@ -1,6 +1,105 @@
 /*==================================================
-=            		   Variables              	   =
+=                 General colors             	   =
 ==================================================*/
+/*==================================================
+=                 Bootstrap colors             	   =
+==================================================*/
+/* line 26, ../sass/common/_bootstrapCustom.scss */
+.btn-default {
+  background: #ededed;
+  border-color: lightgrey;
+}
+/* line 31, ../sass/common/_bootstrapCustom.scss */
+.btn-default:hover, .btn-default:focus {
+  background-color: lightgrey;
+}
+/* line 36, ../sass/common/_bootstrapCustom.scss */
+.btn-default:active, .btn-default.active {
+  background-color: lightgrey;
+  border-color: #a1a1a1;
+}
+
+/* line 47, ../sass/common/_bootstrapCustom.scss */
+.btn-primary {
+  background: #1296d4;
+  border-color: #0e75a5;
+}
+/* line 52, ../sass/common/_bootstrapCustom.scss */
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #0e75a5;
+}
+/* line 57, ../sass/common/_bootstrapCustom.scss */
+.btn-primary:active, .btn-primary.active {
+  background-color: #0e75a5;
+  border-color: #063247;
+}
+
+/* line 68, ../sass/common/_bootstrapCustom.scss */
+.btn-success {
+  background: #1cb555;
+  border-color: #158940;
+}
+/* line 73, ../sass/common/_bootstrapCustom.scss */
+.btn-success:hover, .btn-success:focus {
+  background-color: #158940;
+}
+/* line 78, ../sass/common/_bootstrapCustom.scss */
+.btn-success:active, .btn-success.active {
+  background-color: #158940;
+  border-color: #083017;
+}
+
+/* line 89, ../sass/common/_bootstrapCustom.scss */
+.btn-info {
+  background: #86d8e9;
+  border-color: #5bcae1;
+}
+/* line 94, ../sass/common/_bootstrapCustom.scss */
+.btn-info:hover, .btn-info:focus {
+  background-color: #5bcae1;
+}
+/* line 99, ../sass/common/_bootstrapCustom.scss */
+.btn-info:active, .btn-info.active {
+  background-color: #5bcae1;
+  border-color: #219cb5;
+}
+
+/* line 110, ../sass/common/_bootstrapCustom.scss */
+.btn-warning {
+  background: #d3b051;
+  border-color: #c09a31;
+}
+/* line 115, ../sass/common/_bootstrapCustom.scss */
+.btn-warning:hover, .btn-warning:focus {
+  background-color: #c09a31;
+}
+/* line 120, ../sass/common/_bootstrapCustom.scss */
+.btn-warning:active, .btn-warning.active {
+  background-color: #c09a31;
+  border-color: #6f591c;
+}
+
+/* line 131, ../sass/common/_bootstrapCustom.scss */
+.btn-danger {
+  background: #982626;
+  border-color: #6f1c1c;
+}
+/* line 136, ../sass/common/_bootstrapCustom.scss */
+.btn-danger:hover, .btn-danger:focus {
+  background-color: #6f1c1c;
+}
+/* line 141, ../sass/common/_bootstrapCustom.scss */
+.btn-danger:active, .btn-danger.active {
+  background-color: #6f1c1c;
+  border-color: #1e0707;
+}
+
+/* line 180, ../sass/common/_bootstrapCustom.scss */
+.panel-primary > .panel-heading {
+  background-color: #1296d4;
+  border-color: #0e75a5;
+}
+
 /* line 1, ../sass/common/_general.scss */
 * {
   outline: 0 !important;
@@ -20,6 +119,17 @@ a {
 /* line 14, ../sass/common/_general.scss */
 .dropdown-menu {
   min-width: 80px;
+}
+
+/* line 4, ../sass/common/_form.scss */
+.ng-invalid.form-control {
+  border-color: #d42d2d;
+}
+/* line 6, ../sass/common/_form.scss */
+.ng-invalid.form-control:focus, .ng-invalid.form-control:active {
+  -webkit-box-shadow: 0 1px 1px #eeacac inset;
+  -moz-box-shadow: 0 1px 1px #eeacac inset;
+  box-shadow: 0 1px 1px #eeacac inset;
 }
 
 /* line 1, ../sass/pages/_login.scss */

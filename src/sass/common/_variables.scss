@@ -1,4 +1,51 @@
 /*==================================================
-=            		   Variables              	   =
+=                 General colors             	   =
 ==================================================*/
 
+$error-color: #d42d2d;
+
+/*==================================================
+=                 Bootstrap colors             	   =
+==================================================*/
+
+$default: #ededed;
+$default-background: $default;
+$default-color: darken($default, 20);
+$default-border: darken($default, 10);
+$default-hover:  darken($default, 10);
+$default-border-hover: darken($default, 30);
+
+$success: #1cb555;
+$success-background: $success;
+$success-color: darken($success, 20);
+$success-border: darken($success, 10);
+$success-hover:  darken($success, 10);
+$success-border-hover: darken($success, 30);
+
+$info: #86d8e9;
+$info-background: $info;
+$info-color: darken($info, 20);
+$info-border: darken($info, 10);
+$info-hover:  darken($info, 10);
+$info-border-hover: darken($info, 30);
+
+$primary: #1296d4;
+$primary-background: $primary;
+$primary-color: darken($primary, 20);
+$primary-border: darken($primary, 10);
+$primary-hover:  darken($primary, 10);
+$primary-border-hover: darken($primary, 30);
+
+$warning: #d3b051;
+$warning-background: $warning;
+$warning-color: darken($warning, 20);
+$warning-border: darken($warning, 10);
+$warning-hover:  darken($warning, 10);
+$warning-border-hover: darken($warning, 30);
+
+$danger: #982626;
+$danger-background: $danger;
+$danger-color: darken($danger, 20);
+$danger-border: darken($danger, 10);
+$danger-hover:  darken($danger, 10);
+$danger-border-hover: darken($danger, 30);

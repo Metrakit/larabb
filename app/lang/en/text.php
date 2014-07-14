@@ -7,6 +7,8 @@ return array(
 	'username'									=> 'Username',
 	'user'										=> 'User',
 	'users' 									=> 'Users',
+	'email' 									=> 'Email address',
+	'password'									=> 'Password',
 
 
 	// Navigation
@@ -25,8 +27,8 @@ return array(
 	// Authentification
 
 	'enter_your_id'								=> 'Enter your ids',
-	'password'									=> 'Password',
 	'remember_me'								=> 'Remember me',
+	'wrong_id'									=> 'Wrong id !',
 
 
 	// Form
@@ -42,5 +44,13 @@ return array(
 	// Gallery
 	
 	'picture'									=> 'Picture',	
+
+
+	// Register
+	
+	'create_account'							=> 'Create an account',
+	'confirm_password'							=> 'Confirm the password',
+	'account_created'							=> 'Account successfully created !',	
+
 
 );

@@ -17,14 +17,21 @@ class AuthController extends BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		} else {
 
-
-			return Redirect::route('account');
+			if (Auth::attempt(array('name' => Input::get('name'), 'password' => Input::get('password')), Input::get('remenber'))) {
+			    return Redirect::route('account');
+			} else {
+				return Redirect::back()->with('message', Lang::get('text.wrong_id'));
+			}
+			
 		}
 	}
 
 
 	public function logout()
 	{
+		// Logout user
+		Auth::logout();
+
 		return View::make('home');
 	}	
 

@@ -1,0 +1,11 @@
+// Invalid input
+.ng-invalid {
+
+    &.form-control {
+    	border-color: $error-color;
+    	&:focus, &:active {
+    		@include box-shadow(0 1px 1px lighten($error-color, 30) inset);
+    	}	
+    }
+
+}

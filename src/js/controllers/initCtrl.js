@@ -1,5 +1,4 @@
-var initCtrl = function ($scope)
+app.controller('initCtrl', ['$rootScope', '$scope', function ($rootScope, $scope)
 {
-	
 	console.log('init');
-}
+}]);

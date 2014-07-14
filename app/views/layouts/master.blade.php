@@ -42,14 +42,11 @@
               {{ Module::link('forum', URL::route('forum'), Lang::get('text.forum')) }}
               {{ Module::link('gallery', URL::route('gallery'), Lang::get('text.gallery')) }}
               {{ Module::link('shop', URL::route('shop'), Lang::get('text.shop')) }}
-              <li>
-                <a href="{{URL::route('admin')}}">{{Lang::get('text.administration')}}</a>
-              </li>
             </ul>
 
             {{-- Search module --}}
             @if(Module::isEnabled('search'))
-            <div class="col-sm-4 col-md-4">
+            <div class="navbar-right">
               {{ Form::open(array('route' => 'search', 'class' => 'navbar-form',  'role' => 'search')) }}
                 <div class="input-group">
                   <input type="text" class="form-control" placeholder="{{ Lang::get('text.search') }}" name="keywords">
@@ -110,7 +107,7 @@
 
                   @if(Config::get('setting.inscriptions'))
                   <li>
-                    <a href="{{URL::route('create')}}">{{Lang::get('text.register')}}</a>
+                    <a href="{{URL::route('account/create')}}">{{Lang::get('text.register')}}</a>
                   </li>
                   @endif
 
@@ -130,7 +127,10 @@
 
       <footer>
         <div class="container text-right">
-          <p>&copy; <a href="{{URL::route('home')}}">LaraBB</a> 2014</p>
+          <p>
+            <a href="{{URL::route('admin')}}">{{Lang::get('text.administration')}}</a> 
+            &copy; <a href="{{URL::route('home')}}">LaraBB</a> 2014
+          </p>
         </div>
       </footer>
     

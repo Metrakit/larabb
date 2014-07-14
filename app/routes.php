@@ -30,13 +30,13 @@ $routesGeneral = function()
 	    */
 
 	    // Account route
-	    Route::get('/account', array('as' => 'account', 'uses'=>'UserController@show'));
+	    Route::get('/account', array('as' => 'account', 'uses'=>'AccountController@show'));
 
 	    // Register (GET) route
-	    Route::get('/register', array('before' => 'inscriptions', 'as' => 'create', 'uses'=>'UserController@create'));
+	    Route::get('/register', array('before' => 'inscriptions', 'as' => 'account/create', 'uses'=>'UserController@create'));
 
 	    // Register (POST) route
-	    Route::post('/register', array('before' => 'inscriptions', 'as' => 'store', 'uses'=>'UserController@store'));
+	    Route::post('/register', array('before' => 'inscriptions', 'as' => 'account/store', 'uses'=>'UserController@store'));
 
 
 	    /*
