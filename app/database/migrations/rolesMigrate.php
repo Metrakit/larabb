@@ -15,6 +15,7 @@ class RolesMigrate extends Migration {
 		// Create the 'roles' table
 		Schema::create('roles', function(Blueprint $table)
 	    {
+	    	$table->engine = 'Innodb';
 	        $table->tinyinteger('id');
 	        $table->string('name', 20); 
 	        $table->string('permission');      
