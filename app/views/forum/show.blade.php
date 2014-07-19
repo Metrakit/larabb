@@ -4,7 +4,7 @@
 
 <div class="container">
 	<div class="page-header">
-		<h2>Forum</h2>
+		<h2>{{ Lang::get('text.forum') }}</h2>
 	</div>
 </div>
 

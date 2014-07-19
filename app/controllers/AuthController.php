@@ -2,11 +2,21 @@
 
 class AuthController extends BaseController {
 
+
+	/**
+	 * View for log in an user
+	 * @return View
+	 */
 	public function login()
 	{
 		return View::make('user.login');
 	}
 
+
+	/**
+	 * Check the authentication
+	 * @return Redirect
+	 */
 	public function check()
 	{
 		// Using the Validator
@@ -27,12 +37,17 @@ class AuthController extends BaseController {
 	}
 
 
+	/**
+	 * Log out the user
+	 * @return View
+	 */
 	public function logout()
 	{
 		// Logout user
 		Auth::logout();
 
-		return View::make('home');
+		return Redirect::route('home');
 	}	
+
 
 }

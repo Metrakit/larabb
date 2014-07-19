@@ -16,8 +16,7 @@ class Setting extends Eloquent {
 	{
 		foreach (Setting::allCache() as $setting) {
 			Config::set('setting.' . $setting->label, $setting->value);
-		}
-		
+		}		
 		return true;
 	}
 

@@ -4,7 +4,7 @@
 
 <div class="container">
 	<div class="page-header">
-		<h2>Search</h2>
+		<h2>{{ Lang::get('text.search') }}</h2>
 	</div>
 </div>
 

@@ -4,7 +4,7 @@
 
 <div class="container">
 	<div class="page-header">
-		<h2>User</h2>
+		<h2>{{ Lang::get('text.user') }}</h2>
 	</div>
 </div>
 

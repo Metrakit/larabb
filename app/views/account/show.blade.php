@@ -5,7 +5,7 @@
 <div class="container">
 
 	<div class="page-header">
-		<h2>My account</h2>
+		<h2>{{ Lang::get('text.my_account') }}</h2>
 	</div>
 
 	@if(Session::get('message'))

@@ -70,12 +70,6 @@ App::down(function()
 
 
 
-App::before(function()
-{
-	Setting::make();
-});
-
-
 /*
 |--------------------------------------------------------------------------
 | Require The Filters File
@@ -88,3 +82,4 @@ App::before(function()
 */
 
 require app_path().'/filters.php';
+require app_path().'/blade.php';

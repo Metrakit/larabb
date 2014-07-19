@@ -4,7 +4,7 @@
 
 <div class="container">
 	<div class="page-header">
-		<h2>Gallery</h2>
+		<h2>{{ Lang::get('text.gallery') }}</h2>
 	</div>
 </div>
 
