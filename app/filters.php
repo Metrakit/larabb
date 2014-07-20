@@ -92,6 +92,20 @@ Route::filter('csrf', function()
 |
 */
 
+Route::filter('module', function($route, $request, $value)
+{
+	if (!Module::isEnabled($value)) {
+		return Redirect::route('error/module');
+	}
+});
+
+/*
+|--------------------------------------------------------------------------
+| Inscriptions Filter
+|--------------------------------------------------------------------------
+|
+*/
+
 Route::filter('inscriptions', function()
 {
 	if (!Config::get('setting.inscriptions')) {
