@@ -50,7 +50,7 @@
 
                 @if(Auth::check())
 
-                  <li class="dropdown">
+                  <li class="dropdown" data-stop-event="click">
 
                     <a href="#" class="dropdown-toggle text-strong" data-toggle="dropdown">
                       {{ Lang::get('text.my_account') }}
