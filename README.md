@@ -1,6 +1,6 @@
 # LaraBB
 
-### Demo on : http://larabb.minetop.net
+### Demo on : http://larabb.jordane.net
 
 ## Back end
 
