@@ -11,3 +11,16 @@ Blade::extend(function($value, $compiler) {
 	$replace = '<?php endif; ?>';
 	return preg_replace($pattern, '$1'.$replace, $value);
 });
+
+
+// Check user role
+Blade::extend(function($value) {
+	return preg_replace('/(?<=\s)@role\((.*)/', '<?php if (Auth::check() && Auth::user()->hasRole($1) : ?>', $value);
+});
+
+// End of check user role
+Blade::extend(function($value, $compiler) {
+	$pattern = $compiler->createPlainMatcher('endrole');
+	$replace = '<?php endif; ?>';
+	return preg_replace($pattern, '$1'.$replace, $value);
+});

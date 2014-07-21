@@ -50,11 +50,46 @@
 
                 @if(Auth::check())
 
-                  <li>
-                    <a href="{{URL::route('account')}}">{{ Lang::get('text.my_account') }}</a>
-                  </li>
-                  <li>
-                    <a href="{{URL::route('logout')}}">{{ Lang::get('text.logout') }}</a>
+                  <li class="dropdown">
+
+                    <a href="#" class="dropdown-toggle text-strong" data-toggle="dropdown">
+                      {{ Lang::get('text.my_account') }}
+                      <i class="fa fa-chevron-down"></i>
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-user">
+
+                      <li>
+                        <div>
+                          <div class="row">
+                            <div class="col-sm-4 text-center">
+                              <img src="" />
+                            </div>
+                            <div class="col-sm-8">
+                              <p class="text-strong">{{Auth::user()->name}}</p>
+                              <p class="small">{{Auth::user()->email}}</p>
+                              <a href="{{URL::route('account')}}" class="btn btn-primary btn-block btn-sm">Modifier mon compte</a>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="divider"></li>
+
+                      <li>
+                        <div class="session">
+                          <div class="row">
+                             <div class="col-sm-12">
+                              <p>
+                                <a href="{{URL::route('logout')}}" class="btn btn-danger btn-block">{{ Lang::get('text.logout') }}</a>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                    </ul>
+
                   </li>
 
                 @else
@@ -89,7 +124,7 @@
                         <ul class="dropdown-menu" role="menu">
 
                           @module('user')
-                            <li>
+                            <li>s
                               <a href="#" data-ng-click="searchType = 'user'">
                                 <i class="fa fa-user"></i> {{ Lang::get('text.user') }}
                               </a>
@@ -128,16 +163,15 @@
         </div>
       </div>
 
-
       @yield('container')
-
 
       <footer>
         <div class="container text-right">
           <p>
-            @if(Auth::check())
+            {{-- Check if the connected user is an admin --}}
+            @role('admin')
               <a href="{{URL::route('admin')}}">{{ Lang::get('text.administration') }}</a> 
-            @endif
+            @endrole
             &copy; <a href="{{URL::route('home')}}">LaraBB</a> 2014
           </p>
         </div>

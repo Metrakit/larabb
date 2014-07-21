@@ -1,3 +1,20 @@
 .navbar {
+
+	.dropdown-user > li > div {
+	    width: 305px;
+	    padding: 10px 10px 0 10px;
+		.text-strong {
+			text-transform: capitalize;
+		}
+	}
+
+	.session {
+	    padding: 0 10px;
+	}
+
+	img {
+		height:80px;
+		width:80px;
+	}
 	
 }

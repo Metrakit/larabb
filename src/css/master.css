@@ -100,6 +100,14 @@
   border-color: #0e75a5;
 }
 
+/*==================================================
+=                     Helpers                      =
+==================================================*/
+/* line 5, ../sass/common/_helper.scss */
+.text-strong {
+  font-weight: bold;
+}
+
 /* line 1, ../sass/common/_general.scss */
 * {
   outline: 0 !important;
@@ -119,6 +127,25 @@ a {
 /* line 14, ../sass/common/_general.scss */
 .dropdown-menu {
   min-width: 80px;
+}
+
+/* line 3, ../sass/common/_navbar.scss */
+.navbar .dropdown-user > li > div {
+  width: 305px;
+  padding: 10px 10px 0 10px;
+}
+/* line 6, ../sass/common/_navbar.scss */
+.navbar .dropdown-user > li > div .text-strong {
+  text-transform: capitalize;
+}
+/* line 11, ../sass/common/_navbar.scss */
+.navbar .session {
+  padding: 0 10px;
+}
+/* line 15, ../sass/common/_navbar.scss */
+.navbar img {
+  height: 80px;
+  width: 80px;
 }
 
 /* line 4, ../sass/common/_form.scss */

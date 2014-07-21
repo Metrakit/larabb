@@ -63,8 +63,21 @@ Route::filter('auth.basic', function()
 
 Route::filter('guest', function()
 {
-	if (Auth::check()) return Redirect::to('/');
+	if (Auth::check()) return Redirect::route('home');
 });
+
+
+/*
+|--------------------------------------------------------------------------
+| Role filter
+|--------------------------------------------------------------------------
+*/
+
+Route::filter('role', function($route, $request, $value)
+{
+	if (!Auth::check() || !Auth::user()->hasRole($value)) return Redirect::route('home');
+});
+
 
 /*
 |--------------------------------------------------------------------------

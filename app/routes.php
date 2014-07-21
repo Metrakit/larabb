@@ -30,13 +30,13 @@ $routesGeneral = function()
 	    */
 
 	    // Account route
-	    Route::get('/account', array('as' => 'account', 'uses'=>'AccountController@show'));
+	    Route::get('/account', array('before' => 'auth', 'as' => 'account', 'uses'=>'AccountController@show'));
 
 	    // Register (GET) route
-	    Route::get('/register', array('before' => 'inscriptions', 'as' => 'account/create', 'uses'=>'UserController@create'));
+	    Route::get('/register', array('before' => 'inscriptions|guest', 'as' => 'account/create', 'uses'=>'UserController@create'));
 
 	    // Register (POST) route
-	    Route::post('/register', array('before' => 'inscriptions', 'as' => 'account/store', 'uses'=>'UserController@store'));
+	    Route::post('/register', array('before' => 'inscriptions|guest', 'as' => 'account/store', 'uses'=>'UserController@store'));
 
 
 	    /*
@@ -46,7 +46,7 @@ $routesGeneral = function()
 	    */
 
 	    // Login route
-	    Route::get('/login', array('as' => 'login', 'uses'=>'AuthController@login'));
+	    Route::get('/login', array('before' => 'guest', 'as' => 'login', 'uses'=>'AuthController@login'));
 
 	    // check (login) route
 	    Route::post('/check', array('as' => 'check', 'uses'=>'AuthController@check'));
@@ -205,7 +205,7 @@ if (Config::get('app.subdomains')) {
 |
 */
 if (Config::get('app.subdomains')) {
-	Route::group(array('domain' => 'admin.' . Config::get('app.domain')), $routesAdmin);
+	Route::group(array('before' => 'role:admin', 'domain' => 'admin.' . Config::get('app.domain')), $routesAdmin);
 } else {
-	Route::group(array('prefix' => 'admin'), $routesAdmin);
+	Route::group(array('before' => 'role:admin', 'prefix' => 'admin'), $routesAdmin);
 }
