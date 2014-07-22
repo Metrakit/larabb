@@ -15,11 +15,11 @@ class AdminController extends BaseController {
 	 * Modules administration
 	 * @return View
 	 */
-	public function modules()
+	public function settings()
 	{
 		$data['modules'] = Module::getAll();
 
-		return View::make('admin.modules', $data);
+		return View::make('admin.settings', $data);
 	}
 
 	/**
@@ -37,6 +37,18 @@ class AdminController extends BaseController {
 		}
 
 		return Redirect::back();
-	}			
+	}
+
+
+	/**
+	 * User list
+	 * @return View
+	 */
+	public function users()
+	{
+		$data['users'] = User::all();
+
+		return View::make('admin.users', $data);
+	}				
 
 }

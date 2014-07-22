@@ -13,6 +13,7 @@ return array(
 
 	// Navigation
 
+	'menu'										=> 'Menu',
 	'administration'							=> 'Administration',
 	'forum'										=> 'Forum',
 	'gallery'									=> 'Gallerie',
@@ -50,7 +51,10 @@ return array(
 	
 	'create_account'							=> 'Créer un compte',
 	'confirm_password'							=> 'Confirmer le mot de passe',	
-	'account_created'							=> 'Compte crée avec succès !',			
+	'account_created'							=> 'Compte crée avec succès !',
+
+	// Account
+	'modify_account'							=> 'Modifier mon compte',			
 
 
 );

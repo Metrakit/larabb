@@ -12,7 +12,8 @@ return array(
 
 
 	// Navigation
-
+	
+	'menu'										=> 'Menu',
 	'administration'							=> 'Administration',
 	'forum'										=> 'Forum',
 	'gallery'									=> 'Gallery',
@@ -52,5 +53,7 @@ return array(
 	'confirm_password'							=> 'Confirm the password',
 	'account_created'							=> 'Account successfully created !',	
 
+	// Account
+	'modify_account'							=> 'Modify my account',	
 
 );

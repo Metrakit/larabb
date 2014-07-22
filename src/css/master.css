@@ -129,23 +129,31 @@ a {
   min-width: 80px;
 }
 
-/* line 3, ../sass/common/_navbar.scss */
+/* line 1, ../sass/common/_navbar.scss */
+.navbar {
+  /*
+  *
+  * User panel on navbar
+  * 
+  */
+}
+/* line 8, ../sass/common/_navbar.scss */
 .navbar .dropdown-user > li > div {
-  width: 305px;
+  min-width: 305px;
   padding: 10px 10px 0 10px;
 }
-/* line 6, ../sass/common/_navbar.scss */
+/* line 11, ../sass/common/_navbar.scss */
 .navbar .dropdown-user > li > div .text-strong {
   text-transform: capitalize;
 }
-/* line 11, ../sass/common/_navbar.scss */
-.navbar .session {
-  padding: 0 10px;
-}
 /* line 15, ../sass/common/_navbar.scss */
-.navbar img {
+.navbar .dropdown-user > li > div img {
   height: 80px;
   width: 80px;
+}
+/* line 22, ../sass/common/_navbar.scss */
+.navbar .session {
+  padding: 0 10px;
 }
 
 /* line 4, ../sass/common/_form.scss */
@@ -157,6 +165,53 @@ a {
   -webkit-box-shadow: 0 1px 1px #eeacac inset;
   -moz-box-shadow: 0 1px 1px #eeacac inset;
   box-shadow: 0 1px 1px #eeacac inset;
+}
+
+/* line 3, ../sass/pages/_admin.scss */
+.admin .navbar {
+  margin-bottom: 0;
+}
+/* line 9, ../sass/pages/_admin.scss */
+.admin .navbar-right li {
+  display: inline-block;
+}
+/* line 12, ../sass/pages/_admin.scss */
+.admin .navbar-right li:last-child {
+  margin-right: 15px;
+}
+/* line 16, ../sass/pages/_admin.scss */
+.admin .navbar-right li a {
+  padding: 15px 5px;
+  min-height: 50px;
+}
+/* line 20, ../sass/pages/_admin.scss */
+.admin .navbar-right li a:hover, .admin .navbar-right li a:focus, .admin .navbar-right li a:target, .admin .navbar-right li a:active {
+  background: transparent;
+}
+/* line 24, ../sass/pages/_admin.scss */
+.admin .navbar-right li a i {
+  font-size: 1.5em;
+}
+/* line 34, ../sass/pages/_admin.scss */
+.admin .leftbar ul li {
+  border-bottom: 1px solid #e7e7e7;
+}
+/* line 36, ../sass/pages/_admin.scss */
+.admin .leftbar ul li a.active {
+  background-color: #eee;
+}
+/* line 42, ../sass/pages/_admin.scss */
+.admin .leftbar .nav-second-level li,
+.admin .leftbar .nav-third-level li {
+  border-bottom: 0 !important;
+}
+/* line 46, ../sass/pages/_admin.scss */
+.admin .leftbar .nav-second-level li a {
+  padding-left: 37px;
+}
+/* line 50, ../sass/pages/_admin.scss */
+.admin .leftbar .nav-third-level li a {
+  padding-left: 52px;
 }
 
 /* line 1, ../sass/pages/_login.scss */
@@ -171,11 +226,37 @@ a {
 /* Custom, iPhone Retina */
 /* Extra Small Devices, Phones */
 /* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+  /* line 22, ../sass/common/_media.scss */
+  .admin .leftbar {
+    z-index: 1;
+    position: absolute;
+    width: 250px;
+    margin-top: 51px;
+    border-right: 1px solid #e7e7e7;
+  }
+  /* line 30, ../sass/common/_media.scss */
+  .admin .container {
+    margin: 0 0 0 250px;
+    padding: 0 30px;
+    position: inherit;
+    height: 100%;
+  }
+}
 /* Medium Devices, Desktops */
 /* Large Devices, Wide Screens */
 /*==========  Non-Mobile First Method  ==========*/
 /* Large Devices, Wide Screens */
 /* Medium Devices, Desktops */
 /* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  /* line 69, ../sass/common/_media.scss */
+  .admin .navbar-right {
+    top: 0;
+    right: 0;
+    position: absolute;
+    margin-right: 50px;
+  }
+}
 /* Extra Small Devices, Phones */
 /* Custom, iPhone Retina */

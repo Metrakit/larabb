@@ -21,14 +21,46 @@
     <div class="col-md-4">
       <h2>Modular</h2>
       <p>The modules can be disabled or enabled. The modules available are :</p>
+      
       <ul class="list-unstyled">
-      	<li> @if(Module::isEnabled('forum')) <i class="fa fa-check"></i> @endif Forum</li>
-      	<li> @if(Module::isEnabled('user')) <i class="fa fa-check"></i> @endif User</li>
-      	<li> @if(Module::isEnabled('shop')) <i class="fa fa-check"></i> @endif Shop</li>
-      	<li> @if(Module::isEnabled('gallery')) <i class="fa fa-check"></i> @endif Gallery</li>
-      	<li> @if(Module::isEnabled('search')) <i class="fa fa-check"></i> @endif Search</li>
+
+      	<li> 
+          @module('forum') 
+            <i class="fa fa-check"></i> 
+          @endmodule 
+          Forum
+        </li>
+
+      	<li> 
+          @module('user') 
+            <i class="fa fa-check"></i> 
+          @endmodule 
+          User
+        </li>
+
+      	<li> 
+          @module('shop') 
+            <i class="fa fa-check"></i> 
+          @endmodule 
+          Shop
+        </li>
+
+      	<li> 
+          @module('gallery') 
+            <i class="fa fa-check"></i> 
+          @endmodule 
+          Gallery
+        </li>
+
+      	<li> 
+          @module('search') 
+            <i class="fa fa-check"></i> 
+          @endmodule 
+          Search
+        </li>
+
       </ul>
-      <p><a class="btn btn-default" href="{{URL::route('admin/modules')}}" role="button">Set modules</a></p>
+      <p><a class="btn btn-default" href="{{ URL::route('admin/settings') }}" role="button">Set modules</a></p>
    </div>
     <div class="col-md-4">
       <h2>Easy to handle</h2>

@@ -1,10 +1,10 @@
-@extends('layouts.master')
+@extends('layouts.admin')
 
 @section('container')
 
 <div class="container">
 	<div class="page-header">
-		<h2>Administration - modules</h2>
+		<h2>{{ Lang::get('admin.settings') }}</h2>
 	</div>
 
 

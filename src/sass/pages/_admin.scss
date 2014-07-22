@@ -1,0 +1,56 @@
+.admin {
+
+    .navbar {
+        margin-bottom:0;
+    }
+
+    // Header
+    .navbar-right {
+        li {
+            display: inline-block;
+
+            &:last-child {
+                margin-right: 15px;
+            }
+
+            a {
+                padding: 15px 5px;
+                min-height: 50px;
+
+                &:hover, &:focus, &:target, &:active  {
+                    background:transparent;
+                }
+
+                i {
+                    font-size:1.5em;
+                }         
+            }
+        }
+    }
+
+    // Menu on the left
+    .leftbar {
+
+        ul li {
+            border-bottom: 1px solid #e7e7e7;
+            a.active {
+                background-color: #eee;
+            }
+        }
+
+        .nav-second-level li,
+        .nav-third-level li {
+            border-bottom: 0!important;
+        }
+
+        .nav-second-level li a {
+            padding-left: 37px;
+        }
+
+        .nav-third-level li a {
+            padding-left: 52px;
+        }
+
+    }
+
+}
