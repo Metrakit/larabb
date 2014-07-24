@@ -22,6 +22,25 @@ class AdminController extends BaseController {
 		return View::make('admin.settings', $data);
 	}
 
+
+	/**
+	 * Update settings
+	 * @return [type]
+	 */
+	public function updateSettings()
+	{
+		foreach (Input::except('_token') as $setting => $value) {
+			if ($value) {
+				//Module::enable($module);
+			} else {
+				//Module::disable($module);
+			}			
+		}
+
+		return Redirect::back();
+	}
+	
+
 	/**
 	 * Update modules
 	 * @return [type]

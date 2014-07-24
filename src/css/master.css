@@ -232,15 +232,13 @@ a {
     z-index: 1;
     position: absolute;
     width: 250px;
-    margin-top: 51px;
+    margin-top: 55px;
     border-right: 1px solid #e7e7e7;
   }
   /* line 30, ../sass/common/_media.scss */
-  .admin .container {
-    margin: 0;
+  .admin .layout {
     padding: 0 30px 0px 300px;
     position: inherit;
-    height: 100%;
   }
 }
 /* Medium Devices, Desktops */
@@ -250,7 +248,7 @@ a {
 /* Medium Devices, Desktops */
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
-  /* line 69, ../sass/common/_media.scss */
+  /* line 67, ../sass/common/_media.scss */
   .admin .navbar-right {
     top: 0;
     right: 0;

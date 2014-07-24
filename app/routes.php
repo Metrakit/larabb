@@ -144,7 +144,8 @@ $routesAdmin = function()
     Route::get('/', array('as' => 'admin', 'uses'=>'AdminController@show'));
 
     Route::get('/settings', array('as' => 'admin/settings', 'uses'=>'AdminController@settings'));
-    Route::post('/modules', array('as' => 'admin/modules/update', 'uses'=>'AdminController@updateModules'));
+    Route::post('/settings', array('as' => 'admin/settings/update', 'uses'=>'AdminController@updateSettings'));
+    Route::post('/modules', array('as' => 'admin/modules/update', 'uses'=>'AdminController@updateModules'));   
 
     // User list
     Route::get('/users', array('as' => 'admin/users', 'uses'=>'AdminController@users'));
