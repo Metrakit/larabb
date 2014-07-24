@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'subdomains' => true,
+	'subdomains' => false,
 
 	'domain' => 'larabb.com',
 

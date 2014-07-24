@@ -23,13 +23,62 @@ Vagrant.configure("2") do |config|
     end
   end
 
+  if Vagrant.has_plugin?('vagrant-hostsupdater')
+    hosts = Array.new()
+
+    if !configValues['apache']['install'].nil? &&
+        configValues['apache']['install'].to_i == 1 &&
+        configValues['apache']['vhosts'].is_a?(Hash)
+      configValues['apache']['vhosts'].each do |i, vhost|
+        hosts.push(vhost['servername'])
+
+        if vhost['serveraliases'].is_a?(Array)
+          vhost['serveraliases'].each do |vhost_alias|
+            hosts.push(vhost_alias)
+          end
+        end
+      end
+    elsif !configValues['nginx']['install'].nil? &&
+           configValues['nginx']['install'].to_i == 1 &&
+           configValues['nginx']['vhosts'].is_a?(Hash)
+      configValues['nginx']['vhosts'].each do |i, vhost|
+        hosts.push(vhost['server_name'])
+
+        if vhost['server_aliases'].is_a?(Array)
+          vhost['server_aliases'].each do |x, vhost_alias|
+            hosts.push(vhost_alias)
+          end
+        end
+      end
+    end
+
+    if hosts.any?
+      contents = File.open("#{dir}/puphpet/shell/hostsupdater-notice.txt", 'r'){ |file| file.read }
+      puts "\n\033[34m#{contents}\033[0m\n"
+
+      if config.vm.hostname.to_s.strip.length == 0
+        config.vm.hostname = 'puphpet-dev-machine'
+      end
+
+      config.hostsupdater.aliases = hosts
+    end
+  end
+
   data['vm']['synced_folder'].each do |i, folder|
     if folder['source'] != '' && folder['target'] != ''
-      nfs = (folder['nfs'] == "true") ? "nfs" : nil
-      if nfs == "nfs"
-        config.vm.synced_folder "#{folder['source']}", "#{folder['target']}", id: "#{i}", type: nfs
+      if folder['sync_type'] == 'nfs'
+        config.vm.synced_folder "#{folder['source']}", "#{folder['target']}", id: "#{i}", type: "nfs"
+      elsif folder['sync_type'] == 'smb'
+        config.vm.synced_folder "#{folder['source']}", "#{folder['target']}", id: "#{i}", type: "smb"
+      elsif folder['sync_type'] == 'rsync'
+        rsync_args = !folder['rsync']['args'].nil? ? folder['rsync']['args'] : ["--verbose", "--archive", "--delete", "-z"]
+        rsync_auto = !folder['rsync']['auto'].nil? ? folder['rsync']['auto'] : true
+        rsync_exclude = !folder['rsync']['exclude'].nil? ? folder['rsync']['exclude'] : [".vagrant/"]
+
+        config.vm.synced_folder "#{folder['source']}", "#{folder['target']}", id: "#{i}",
+            rsync__args: rsync_args, rsync__exclude: rsync_exclude, rsync__auto: rsync_auto, type: "rsync"
       else
-        config.vm.synced_folder "#{folder['source']}", "#{folder['target']}", id: "#{i}", type: nfs,
+        config.vm.synced_folder "#{folder['source']}", "#{folder['target']}", id: "#{i}",
           group: 'www-data', owner: 'www-data', mount_options: ["dmode=775", "fmode=764"]
       end
     end
@@ -111,7 +160,8 @@ Vagrant.configure("2") do |config|
     kg.path = "puphpet/shell/ssh-keygen.sh"
     kg.args = "#{ssh_username}"
   end
-  config.vm.provision :shell, :path => "puphpet/shell/update-puppet.sh"
+  config.vm.provision :shell, :path => "puphpet/shell/install-ruby.sh"
+  config.vm.provision :shell, :path => "puphpet/shell/install-puppet.sh"
 
   config.vm.provision :puppet do |puppet|
     puppet.facter = {
@@ -128,7 +178,14 @@ Vagrant.configure("2") do |config|
     end
   end
 
-  config.vm.provision :shell, :path => "puphpet/shell/execute-files.sh"
+  config.vm.provision :shell do |s|
+    s.path = "puphpet/shell/execute-files.sh"
+    s.args = ["exec-once", "exec-always"]
+  end
+  config.vm.provision :shell, run: "always" do |s|
+    s.path = "puphpet/shell/execute-files.sh"
+    s.args = ["startup-once", "startup-always"]
+  end
   config.vm.provision :shell, :path => "puphpet/shell/important-notices.sh"
 
   if File.file?("#{dir}/puphpet/files/dot/ssh/id_rsa")
@@ -167,4 +224,5 @@ Vagrant.configure("2") do |config|
   end
 
 end
+
 
