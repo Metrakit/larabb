@@ -3,7 +3,8 @@
 // Check if module exist
 Blade::extend(function($value) {
 	// Old Regex : /(?<=\s)@module\((.*)/
-	return preg_replace("/@module\('([a-zA-Z]+)'\)/", '<?php if (Module::isEnabled($1) : ?>', $value);
+	// New Regex okay : @module\('([a-zA-Z]+)'\)
+	return preg_replace("/@module\('(\w+)'\)/", '<?php if (Module::isEnabled($1) : ?>', $value);
 });
 
 // End of check
