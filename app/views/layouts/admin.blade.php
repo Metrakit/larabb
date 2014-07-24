@@ -110,7 +110,9 @@
 
   </nav>
 
-  @yield('container')
+  <div class="layout">
+    @yield('container')
+  </div>
 
 </div>
 

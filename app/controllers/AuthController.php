@@ -27,8 +27,12 @@ class AuthController extends BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		} else {
 
-			if (Auth::attempt(array('name' => Input::get('name'), 'password' => Input::get('password')), Input::get('remenber'))) {
-			    return Redirect::route('account');
+			// Detect if the input is an email or an username
+			$type = (filter_var(Input::get('name'), FILTER_VALIDATE_EMAIL)) ? 'email' : 'name';
+
+			// Auth attempt
+			if (Auth::attempt(array($type => Input::get('name'), 'password' => Input::get('password')), Input::get('remember'))) {
+			    return Redirect::intended('account');
 			} else {
 				return Redirect::back()->with('message', Lang::get('text.wrong_id'));
 			}

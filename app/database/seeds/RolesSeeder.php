@@ -8,27 +8,23 @@ class RolesSeeder extends Seeder {
 
         DB::table('roles')->insert(array(
 
-        	// Modules settings
 			array(
-				'label' => 'module_forum',
-				'value' => true		
+				'id' => 1,
+				'name' => 'user',
+				'permission' => '',		
 			),
+
 			array(
-				'label' => 'module_user',
-				'value' => true		
+				'id' => 2,
+				'name' => 'moderator',
+				'permission' => '',		
 			),
+
 			array(
-				'label' => 'module_shop',
-				'value' => true		
+				'id' => 3,
+				'name' => 'admin',
+				'permission' => '',		
 			),
-			array(
-				'label' => 'module_gallery',
-				'value' => true		
-			),
-			array(
-				'label' => 'module_search',
-				'value' => true		
-			)
 
         ));
 

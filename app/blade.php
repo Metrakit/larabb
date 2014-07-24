@@ -2,7 +2,7 @@
 
 // Check if module exist
 Blade::extend(function($value) {
-	return preg_replace('/(?<=\s)@module\((.*)/', '<?php if (Module::isEnabled($1) : ?>', $value);
+	return preg_replace("/@module\('(\w+)'\)/", "<?php if (Module::isEnabled('$1')) : ?>", $value);
 });
 
 // End of check
@@ -15,7 +15,7 @@ Blade::extend(function($value, $compiler) {
 
 // Check user role
 Blade::extend(function($value) {
-	return preg_replace('/(?<=\s)@role\((.*)/', '<?php if (Auth::check() && Auth::user()->hasRole($1) : ?>', $value);
+	return preg_replace("/@role\('(\w+)'\)/", "<?php if (Auth::check() && Auth::user()->hasRole('$1')) : ?>", $value);
 });
 
 // End of check user role

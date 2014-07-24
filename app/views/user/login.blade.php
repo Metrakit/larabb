@@ -27,7 +27,7 @@
 			    	{{ Form::open(array('route' => 'check')) }}
 	                    <fieldset>
 				    	  	<div class="form-group">
-				    		    <input class="form-control" placeholder="{{ Lang::get('text.user') }}" name="name" type="text">
+				    		    <input class="form-control" placeholder="{{ Lang::get('text.username_email') }}" name="name" type="text">
 				    		</div>
 				    		<div class="form-group">
 				    			<input class="form-control" placeholder="{{ Lang::get('text.password') }}" name="password" type="password" value="">

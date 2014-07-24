@@ -29,6 +29,7 @@ return array(
 
 	'enter_your_id'								=> 'Enter your ids',
 	'remember_me'								=> 'Remember me',
+	'username_email'							=> 'Username or email',	
 	'wrong_id'									=> 'Wrong id !',
 
 

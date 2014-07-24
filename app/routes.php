@@ -144,7 +144,8 @@ $routesAdmin = function()
     Route::get('/', array('as' => 'admin', 'uses'=>'AdminController@show'));
 
     Route::get('/settings', array('as' => 'admin/settings', 'uses'=>'AdminController@settings'));
-    Route::post('/modules', array('as' => 'admin/modules/update', 'uses'=>'AdminController@updateModules'));
+    Route::post('/settings', array('as' => 'admin/settings/update', 'uses'=>'AdminController@updateSettings'));
+    Route::post('/modules', array('as' => 'admin/modules/update', 'uses'=>'AdminController@updateModules'));   
 
     // User list
     Route::get('/users', array('as' => 'admin/users', 'uses'=>'AdminController@users'));
@@ -159,8 +160,8 @@ $routesAdmin = function()
 |--------------------------------------------------------------------------
 |
 */
-Route::group(array('domain' => 'www.' . Config::get('app.domain')), $routesGeneral);
-Route::group(array('domain' => Config::get('app.domain')), $routesGeneral);
+Route::group(array('domain' => 'www.' . Config::get('setting.domain')), $routesGeneral);
+Route::group(array('domain' => Config::get('setting.domain')), $routesGeneral);
 
 
 
@@ -172,34 +173,32 @@ Route::group(array('domain' => Config::get('app.domain')), $routesGeneral);
 */
 
 // Forum
-if (Config::get('app.subdomains')) {
-	Route::group(array('before' => 'module:forum', 'domain' => 'forum.' . Config::get('app.domain')), $routesForum);
+if (Config::get('setting.subdomains')) {
+	Route::group(array('before' => 'module:forum', 'domain' => 'forum.' . Config::get('setting.domain')), $routesForum);
 } else {
 	Route::group(array('before' => 'module:forum', 'prefix' => 'forum'), $routesForum);
 }
 
 // Shop
-if (Config::get('app.subdomains')) {
-	Route::group(array('before' => 'module:shop', 'domain' => 'shop.' . Config::get('app.domain')), $routesShop);
+if (Config::get('setting.subdomains')) {
+	Route::group(array('before' => 'module:shop', 'domain' => 'shop.' . Config::get('setting.domain')), $routesShop);
 } else {
 	Route::group(array('before' => 'module:shop', 'prefix' => 'shop'), $routesShop);
 }
 
 // Gallery
-if (Config::get('app.subdomains')) {
-	Route::group(array('before' => 'module:gallery', 'domain' => 'gallery.' . Config::get('app.domain')), $routesGallery);
+if (Config::get('setting.subdomains')) {
+	Route::group(array('before' => 'module:gallery', 'domain' => 'gallery.' . Config::get('setting.domain')), $routesGallery);
 } else {
 	Route::group(array('before' => 'module:gallery', 'prefix' => 'gallery'), $routesGallery);
 }
 
 // Search
-if (Config::get('app.subdomains')) {
-	Route::group(array('before' => 'module:search', 'domain' => 'search.' . Config::get('app.domain')), $routesSearch);
+if (Config::get('setting.subdomains')) {
+	Route::group(array('before' => 'module:search', 'domain' => 'search.' . Config::get('setting.domain')), $routesSearch);
 } else {
 	Route::group(array('before' => 'module:search', 'prefix' => 'search'), $routesSearch);
 }
-
-
 
 /*
 |--------------------------------------------------------------------------
@@ -207,8 +206,8 @@ if (Config::get('app.subdomains')) {
 |--------------------------------------------------------------------------
 |
 */
-if (Config::get('app.subdomains')) {
-	Route::group(array('before' => 'role:admin', 'domain' => 'admin.' . Config::get('app.domain')), $routesAdmin);
+if (Config::get('setting.subdomains')) {
+	Route::group(array('before' => 'role:admin', 'domain' => 'admin.' . Config::get('setting.domain')), $routesAdmin);
 } else {
 	Route::group(array('before' => 'role:admin', 'prefix' => 'admin'), $routesAdmin);
 }

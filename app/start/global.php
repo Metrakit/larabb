@@ -70,7 +70,9 @@ App::down(function()
 
 App::before(function()
 {
-	Config::set('session.domain', '.' . Config::get('app.domain'));
+	// Initialize config variables
+	Config::set('session.domain', '.' . Config::get('setting.domain'));
+	Config::set('app.url', 'http://' . Config::get('setting.domain'));
 });
 
 

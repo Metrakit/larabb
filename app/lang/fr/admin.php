@@ -15,6 +15,7 @@ return array(
 	'create_user' 				=> 'Créer un utilisateur',
 	'dashboard' 				=> 'Tableau de bord',
 	'forum_list'				=> 'Liste des forums',
+	'general_setting'			=> 'Configuration générale',
 	'groups' 					=> 'Groupes',
 	'group_list'				=> 'Liste des groupes',
 	'modules' 					=> 'Modules',

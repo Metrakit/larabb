@@ -36,8 +36,17 @@ class SettingsSeeder extends Seeder {
 			array(
 				'label' => 'inscriptions',
 				'value' => true		
-			)
+			),
 
+			// Domain and subdomains
+			array(
+				'label' => 'domain',
+				'value' => 'larabb.com'		
+			),
+			array(
+				'label' => 'subdomains',
+				'value' => false
+			)
 
 
         ));
