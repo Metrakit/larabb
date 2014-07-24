@@ -28,11 +28,11 @@ class AuthController extends BaseController {
 		} else {
 
 			// Detect if the input is an email or an username
-			$type = (filter_var(Input::get('name'), FILTER_VALIDATE_EMAIL)) ? 'email' : 'name'; 
+			$type = (filter_var(Input::get('name'), FILTER_VALIDATE_EMAIL)) ? 'email' : 'name';
 
 			// Auth attempt
-			if (Auth::attempt(array($type => Input::get('name'), 'password' => Input::get('password')), Input::get('remenber'))) {
-			    return Redirect::route('account');
+			if (Auth::attempt(array($type => Input::get('name'), 'password' => Input::get('password')), Input::get('remember'))) {
+			    return Redirect::intended('account');
 			} else {
 				return Redirect::back()->with('message', Lang::get('text.wrong_id'));
 			}
