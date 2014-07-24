@@ -9662,27 +9662,28 @@ a {
 
 /* line 1, ../sass/common/_navbar.scss */
 .navbar {
+  border-radius: 0;
   /*
   *
   * User panel on navbar
   * 
   */
 }
-/* line 8, ../sass/common/_navbar.scss */
+/* line 10, ../sass/common/_navbar.scss */
 .navbar .dropdown-user > li > div {
   min-width: 305px;
   padding: 10px 10px 0 10px;
 }
-/* line 11, ../sass/common/_navbar.scss */
+/* line 13, ../sass/common/_navbar.scss */
 .navbar .dropdown-user > li > div .text-strong {
   text-transform: capitalize;
 }
-/* line 15, ../sass/common/_navbar.scss */
+/* line 17, ../sass/common/_navbar.scss */
 .navbar .dropdown-user > li > div img {
   height: 80px;
   width: 80px;
 }
-/* line 22, ../sass/common/_navbar.scss */
+/* line 24, ../sass/common/_navbar.scss */
 .navbar .session {
   padding: 0 10px;
 }
