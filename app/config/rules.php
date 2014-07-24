@@ -8,7 +8,7 @@
 
 return array(
 	'login'			=>	array (
-		'name'				=> 'required|min:3|max:20',
+		'name'				=> 'required|min:3',
 		'password'			=> 'required|min:6|max:20|alphanum',
 	),
 
