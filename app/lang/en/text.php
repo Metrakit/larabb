@@ -54,7 +54,23 @@ return array(
 	'confirm_password'							=> 'Confirm the password',
 	'account_created'							=> 'Account successfully created !',	
 
+
 	// Account
+
 	'modify_account'							=> 'Modify my account',	
+
+
+	// Concats
+
+	'page_link' 								=> 'Link of your %s page',	
+	'module' 									=> '%s Module',	
+	'URL_c' 									=> '%s URL',
+
+
+	// Social Networks
+
+	'social_networks'							=> 'Social neworks',
+	'youtube_channel'							=> 'Youtube channel',
+	'youtube_link'								=> 'Lien de votre chaîne Youtube',
 
 );

@@ -11,7 +11,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{URL::route('home')}}">{{ Config::get('setting.brandname') }}</a>
+      <a class="navbar-brand" href="{{URL::route('home')}}">{{ Config::get('setting.sitename') }}</a>
     </div>
 
     <div class="navbar-collapse" data-collapse="!navCollapse">
@@ -153,7 +153,7 @@
       @role('admin')
         <a href="{{URL::route('admin')}}">{{ Lang::get('text.administration') }}</a> 
       @endrole
-      &copy; <a href="{{URL::route('home')}}">{{ Config::get('setting.brandname') }}</a> 2014
+      &copy; <a href="{{URL::route('home')}}">{{ Config::get('setting.sitename') }}</a> 2014
     </p>
   </div>
 </footer>

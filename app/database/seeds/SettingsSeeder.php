@@ -46,7 +46,14 @@ class SettingsSeeder extends Seeder {
 			array(
 				'label' => 'subdomains',
 				'value' => false
+			),
+
+			// Sitename
+			array(
+				'label' => 'sitename',
+				'value' => 'LaraBB'
 			)
+
 
 
         ));

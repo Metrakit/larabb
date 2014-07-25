@@ -21,6 +21,9 @@ return array(
 	'modules' 					=> 'Modules',
 	'permissions' 				=> 'Permissions',
 	'settings' 					=> 'Configurations',
+	'short_description' 		=> 'Une courte description du site',	
+	'sitename'					=> 'Nom du site',
+	'description'				=> 'Description du site',
 	'statistics' 				=> 'Statistiques',
 	'user_list'					=> 'Liste des utilisateurs',
 

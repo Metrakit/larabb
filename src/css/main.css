@@ -9669,21 +9669,21 @@ a {
   * 
   */
 }
-/* line 10, ../sass/common/_navbar.scss */
+/* line 11, ../sass/common/_navbar.scss */
 .navbar .dropdown-user > li > div {
   min-width: 305px;
   padding: 10px 10px 0 10px;
 }
-/* line 13, ../sass/common/_navbar.scss */
+/* line 14, ../sass/common/_navbar.scss */
 .navbar .dropdown-user > li > div .text-strong {
   text-transform: capitalize;
 }
-/* line 17, ../sass/common/_navbar.scss */
+/* line 18, ../sass/common/_navbar.scss */
 .navbar .dropdown-user > li > div img {
   height: 80px;
   width: 80px;
 }
-/* line 24, ../sass/common/_navbar.scss */
+/* line 25, ../sass/common/_navbar.scss */
 .navbar .session {
   padding: 0 10px;
 }

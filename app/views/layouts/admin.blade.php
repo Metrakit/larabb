@@ -14,7 +14,7 @@
               <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="{{URL::route('admin')}}">
-            {{ Config::get('setting.brandname') }} <small>{{ Lang::get('text.administration') }}</small>
+            {{ Config::get('setting.sitename') }} <small>{{ Lang::get('text.administration') }}</small>
           </a>
       </div>
 
