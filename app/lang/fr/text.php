@@ -62,6 +62,8 @@ return array(
 
 	// Concats
 
+	'activate_api' 								=> 'Activer l\'API %s',	
+	'key_c' 									=> 'Clef %s',	
 	'page_link' 								=> 'Lien de votre page %s',	
 	'module' 									=> 'Module %s',	
 	'URL_c' 									=> 'URL %s',

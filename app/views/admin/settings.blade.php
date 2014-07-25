@@ -8,7 +8,9 @@
 
 <div class="row">
 
+
 	<div class="col-md-7">
+
 
 		<div class="panel panel-warning">
 
@@ -42,6 +44,7 @@
 			</div>
 
 		</div>
+
 
 		<div class="panel panel-success">
 
@@ -97,11 +100,13 @@
 
 		</div>		
 
+
 	</div>
 
 
 
 	<div class="col-md-5">
+
 
 		<div class="panel panel-primary">
 
@@ -110,10 +115,10 @@
 			</div>
 
 			<div class="panel-body">
-				{{ Form::open(array('route' => 'admin/modules/update')) }}
+				{{ Form::open(array('route' => 'admin/modules/update', 'class' => 'form-horizontal')) }}
 
 					@foreach ($modules as $module => $value)
-						<div class="form-group">				
+						<div class="form-group col-md-12">				
 							<div class="checkbox">
 								<label for="{{ $module }}">
 									<input name="{{ $module }}" @if($value) checked @endif type="checkbox">
@@ -131,30 +136,96 @@
 
 		</div>
 
-		<div class="panel panel-primary">
+
+		<div class="panel panel-danger">
 
 			<div class="panel-heading">
 				APIs
 			</div>
 
 			<div class="panel-body">
-				{{ Form::open(array('route' => 'admin/modules/update')) }}
+				{{ Form::open(array('route' => 'admin/modules/update', 'class' => 'form-horizontal')) }}
 
+
+					{{-- Facebook API --}}
 					<div class="form-group">				
-						<div class="checkbox">
+						<div class="col-md-12 checkbox">
 							<label for="facebookAPI">
 								<input name="facebookAPI" type="checkbox" data-ng-model="facebookAPI">
-								Facebook Key
+								{{ Helper::concat('activate_api', 'Facebook') }}
 							</label>
 						</div>
 					</div>
 
-					<div class="form-group" data-ng-if="facebookAPI">
-						<label class="col-md-4 control-label" for="linkedin_url">Facebook Key</label>
-						<div class="col-md-8">
-							<input type="text" placeholder="{{ Helper::concat('page_link', 'LinkedIN') }}" name="linkedin_url" class="form-control">
+					<div data-ng-if="facebookAPI">
+
+						<div class="form-group">
+							<label class="col-md-4 control-label" for="facebook_key">{{ Helper::concat('key_c', 'Facebook') }}</label>
+							<div class="col-md-8">
+								<input type="text" placeholder="{{ Helper::concat('key_c', 'Facebook') }}" name="facebook_key" class="form-control">
+							</div>
+						</div>	
+
+					</div>
+
+
+					{{-- Twitter API --}}
+
+					<div class="form-group">				
+						<div class="col-md-12 checkbox">
+							<label for="twitterAPI">
+								<input name="twitterAPI" type="checkbox" data-ng-model="twitterAPI">
+								{{ Helper::concat('activate_api', 'Twitter') }}
+							</label>
 						</div>
-					</div>	
+					</div>
+
+					<div data-ng-if="twitterAPI">
+
+						<div class="form-group">
+							<label class="col-md-4 control-label" for="twitter_key">{{ Helper::concat('key_c', 'Twitter') }}</label>
+							<div class="col-md-8">
+								<input type="text" placeholder="{{ Helper::concat('key_c', 'Twitter') }}" name="twitter_key" class="form-control">
+							</div>
+						</div>	
+
+					</div>
+
+
+					{{-- Google+ API --}}
+
+					<div class="form-group">				
+						<div class="col-md-12 checkbox">
+							<label for="googleAPI">
+								<input name="googleAPI" type="checkbox" data-ng-model="googleAPI">
+								{{ Helper::concat('activate_api', 'Google +') }}
+							</label>
+						</div>
+					</div>
+
+					<div data-ng-if="googleAPI">
+
+						<div class="form-group">
+							<label class="col-md-4 control-label" for="google_key">{{ Helper::concat('key_c', 'Google +') }}</label>
+							<div class="col-md-8">
+								<input type="text" placeholder="{{ Helper::concat('key_c', 'Google +') }}" name="google_key" class="form-control">
+							</div>
+						</div>	
+
+					</div>					
+
+
+					{{-- Google Analytics API --}}
+
+					<div class="form-group">				
+						<div class="col-md-12 checkbox">
+							<label for="google_analytics">
+								<input name="google_analytics" type="checkbox">
+								{{ Helper::concat('activate_api', 'Google analytics') }}
+							</label>
+						</div>
+					</div>
+
 
 					<div class="form-group col-md-12">
 						{{ Form::submit(Lang::get('text.valid'), array('class' => 'btn btn-success')) }}
@@ -164,8 +235,8 @@
 
 		</div>
 
-	</div>
 
+	</div>
 
 
 </div>
